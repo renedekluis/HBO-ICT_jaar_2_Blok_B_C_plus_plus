@@ -33,10 +33,16 @@
     <ClCompile Include="screen_objects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="movement.cpp">
+    <ClCompile Include="object_editor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="object_editor.cpp">
+    <ClCompile Include="picture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="button_actions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="color_convert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,10 +59,22 @@
     <ClInclude Include="screen_objects.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movement.hpp">
+    <ClInclude Include="object_editor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="object_editor.hpp">
+    <ClInclude Include="picture.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="button_actions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="color_convert.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exception_list.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file_reading_operators.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

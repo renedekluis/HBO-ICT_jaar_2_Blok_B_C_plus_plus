@@ -176,19 +176,25 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="button_actions.cpp" />
     <ClCompile Include="circle.cpp" />
+    <ClCompile Include="color_convert.cpp" />
     <ClCompile Include="line.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="movement.cpp" />
     <ClCompile Include="object_editor.cpp" />
+    <ClCompile Include="picture.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="screen_objects.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="button_actions.hpp" />
     <ClInclude Include="circle.hpp" />
+    <ClInclude Include="color_convert.hpp" />
+    <ClInclude Include="exception_list.hpp" />
+    <ClInclude Include="file_reading_operators.hpp" />
     <ClInclude Include="line.hpp" />
-    <ClInclude Include="movement.hpp" />
     <ClInclude Include="object_editor.hpp" />
+    <ClInclude Include="picture.hpp" />
     <ClInclude Include="rectangle.hpp" />
     <ClInclude Include="screen_objects.hpp" />
   </ItemGroup>

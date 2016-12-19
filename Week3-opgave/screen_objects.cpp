@@ -2,11 +2,12 @@
 
 
 
-screen_objects::screen_objects()
-{
+screen_objects::screen_objects(){
 }
 
 
-screen_objects::~screen_objects()
-{
+
+screen_objects::~screen_objects(){
 }
+
+

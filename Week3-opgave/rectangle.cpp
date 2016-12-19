@@ -1,14 +1,14 @@
 #include "rectangle.hpp"
 
 
-rectangle::rectangle(sf::RenderWindow & window, sf::Vector2f size) :
+rectangle::rectangle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, sf::Vector2f end_position) :
 	window(window),
-	size(size)
+	position(position),
+	end_position(end_position),
+	color(color)
 {
-	position = window.getView().getSize();
-	position.x = (position.x / 2) - (size.x / 2);
-	position.y -= size.y;
-	square.setSize(size);
+	square.setSize(end_position);
+	square.setFillColor(color);
 	square.setPosition(windowSize.x / 2 - size.x / 2, windowSize.y - size.y);
 
 }
@@ -18,7 +18,7 @@ void rectangle::draw() const {
 }
 
 sf::Vector2f rectangle::move(sf::Vector2f delta) {
-	if (!col) {
+
 		if (position.x < 0) {
 			position.x = 0;
 		}
@@ -37,19 +37,28 @@ sf::Vector2f rectangle::move(sf::Vector2f delta) {
 
 		square.setPosition(position);
 		return position;
-	}
-	else {
 
-		square.setPosition(position);
-		col = false;
-		return position;
-	}
 }
 
-sf::FloatRect rectangle::get_player_bounds() {
+sf::FloatRect rectangle::get_bounds() {
 	return square.getGlobalBounds();
 }
 
-void rectangle::collision() {
-	col = true;
+
+std::string rectangle::to_string() {
+	std::ostringstream s;
+	sf::FloatRect position = get_bounds();
+	s << 
+		"RECTANGLE (" 
+		<< position.left 
+		<< "," 
+		<< position.top 
+		<< ") "
+		<< color_convert::color_to_string(color)
+		<< " ("
+		<< end_position.x
+		<< "," 
+		<< end_position.y 
+		<< ")";
+	return s.str();
 }

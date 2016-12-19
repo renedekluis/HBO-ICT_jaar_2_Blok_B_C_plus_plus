@@ -1,13 +1,10 @@
 #include "circle.hpp"
 
 
-
-
-
-circle::circle(sf::RenderWindow & window, sf::Vector2f moveDirection, float radius) :
+circle::circle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, float radius) :
 	window(window),
 	radius(radius),
-	moveDirection(moveDirection)
+	position(position)
 {
 	position = window.getView().getSize();
 	position.x /= 2;
@@ -19,62 +16,43 @@ void circle::draw() const {
 	window.draw(round);
 }
 
-sf::Vector2f circle::move() {
-	sf::Vector2f windowSize = window.getView().getSize();
+sf::Vector2f circle::move(sf::Vector2f delta) {
 
 	if (position.x < 0) {
 		position.x = 0;
-		moveDirection.x = -moveDirection.x;
 	}
-	if (position.x >(windowSize.x - 2 * radius)) {
-		position.x = windowSize.x - 2 * radius;
-		moveDirection.x = -moveDirection.x;
+	else if (position.x >(windowSize.x - radius)) {
+		position.x = float(windowSize.x - radius);
 	}
-
-	if (position.y >(windowSize.y - 2 * radius)) {
-		position.y = windowSize.y - 2 * radius;
-		moveDirection.y = -moveDirection.y;
-	}
-	if (position.y < 0) {
+	else if (position.y < 0) {
 		position.y = 0;
-		moveDirection.y = -moveDirection.y;
 	}
-	if (col_y) {
-		moveDirection.y = -moveDirection.y;
+	else if (position.y >(windowSize.y - radius)) {
+		position.y = float(windowSize.y - radius);
 	}
-	if (col_x) {
-		moveDirection.x = -moveDirection.x;
+	else {
+		position += delta;
 	}
-	if (col) {
-		moveDirection = -moveDirection;
-	}
-
-	position += moveDirection;
 	round.setPosition(position);
 	return position;
 }
 
-void circle::collision_x() {
-	col_x = true;
-	move();
-	col_x = false;
-}
-void circle::collision_y() {
-	col_y = true;
-	move();
-	col_y = false;
-}
-void circle::collision() {
-	col = true;
-	move();
-	col = false;
-}
-
-sf::FloatRect circle::get_ball_bounds() {
+sf::FloatRect circle::get_bounds() {
 	return round.getGlobalBounds();
 }
 
-void circle::jump(sf::Vector2f target) {
-	position = target;
+
+std::string circle::to_string() {
+	std::ostringstream s;
+	sf::FloatRect position = get_bounds();
+	s << "CIRCLE (" 
+		<< position.left 
+		<< "," 
+		<< position.top 
+		<< ") "
+		<< color_convert::color_to_string(color)
+		<< " " 
+		<< radius;
+	return s.str();
 }
 

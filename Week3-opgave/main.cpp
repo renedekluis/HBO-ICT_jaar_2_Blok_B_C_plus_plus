@@ -6,7 +6,7 @@ int main(void) {
 	std::cout << "Starting application\n";
 
 	sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window" };
-	char* filename = "object_data.txt";
+	std::string filename = "object_data.txt";
 	object_editor edit(window, filename);
 
 	while (window.isOpen()) {
@@ -33,24 +33,3 @@ int main(void) {
 	return 0;
 }
 
-
-/*
-class movement -> bewegen
-class screen_objects -> selecteren
-
-factory() creeert:
-	circle
-	rectangle
-	line
-	picture 
-
-objecten:
-	bevatten positie
-	bevatten een kleur behalve picture
-	circle bevat diameter
-	line en rectangle een eind punt
-
-objecten staan opgeslagen in een text file
-
-
-*/
