@@ -1,21 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "exception_list.hpp"
 
-
-class unknown_color : public std::exception {
-public:
-	unknown_color(const std::string & name) :
-		s{ std::string{ "unknown color [" } +name + "]" }
-	{}
-
-	const char * what(){
-		return s.c_str();
-	}
-
-private:
-	std::string s;
-};
 
 
 const struct {

@@ -1,14 +1,18 @@
 #include "object_editor.hpp"
 
 
-
 object_editor::object_editor(sf::RenderWindow & window, std::string filename_object_data):
 	window(window),
 	filename_object_data(filename_object_data)
 {
+	input.open(filename_object_data);
+	if (!input.is_open()) {
+		std::cout << "No file";
+	}
+
 	try {
 		for (;;) {
-			screen_objects.push_back(screen_object_read(input));
+			object_list.push_back(screen_object_read(input));
 		}
 	}
 	catch(end_of_file){
@@ -16,31 +20,50 @@ object_editor::object_editor(sf::RenderWindow & window, std::string filename_obj
 	}
 }
 
-void object_editor::update() {}
+void object_editor::update() {
+	if (check_mouse()) {
+		sf::Vector2f position_of_mouse = get_mouse_position(window);
+		for (auto list : object_list) {
+			if(list->get_bounds().contains(position_of_mouse)){
+				list->is_selected();
+			}
+			else {
+				list->cancel_selected();
+			}
+		}
+	}
+	for (auto list : object_list) {
+		list->move(get_move_direction_from_button_keys());
+		list->draw();
+	}
+	
+	
+
+}
 
 
 
 screen_objects* object_editor::screen_object_read(std::ifstream & input){
 	sf::Vector2f position;
 	std::string name;
-	filename_object_data >> position >> name;
+	input >> position >> name;
 
 	if (name == "CIRCLE") {
 		sf::Color color;
 		float radius;
-		filename_object_data >> color >> radius;
+		input >> color >> radius;
 		return new circle(window, position, color, radius);
 	}
 	else if (name == "RECTANGLE") {
 		sf::Color color;
 		sf::Vector2f end_position;
-		filename_object_data >> color >> end_position;
+		input >> color >> end_position;
 		return new rectangle(window, position, color, end_position);
 
 	}
 	else if (name == "PICTURE") {
 		std::string fileName;
-		filename_object_data >> fileName >> position;
+		input >> fileName >> position;
 		return new picture(window, fileName, position);
 	}
 	//else if (name == "LINE") {
@@ -56,15 +79,9 @@ screen_objects* object_editor::screen_object_read(std::ifstream & input){
 	throw unknown_shape(name);
 }
 
-void object_editor::redraw(sf::RenderWindow &window, std::list<screen_objects*> screen_objects) {
-	window.clear();
-	for (auto screen_obj : screen_objects) {
-		screen_obj->draw(window);
-	}
-	window.display();
-}
 
-void object_editor::save(std::list<screen_objects*> screen_objects) {
+
+void object_editor::save(std::vector<screen_objects*> screen_objects) {
 	std::ofstream output("objects.txt");
 	for (auto screen_obj : screen_objects) {
 		output << *screen_obj << std::endl;
@@ -81,4 +98,5 @@ sf::Vector2f object_editor::Vector2f_from_Vector2i(sf::Vector2i vector) {
 
 
 object_editor::~object_editor(){
+	save(object_list);
 }

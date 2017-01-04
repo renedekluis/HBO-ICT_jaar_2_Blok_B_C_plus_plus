@@ -179,6 +179,7 @@
     <ClCompile Include="button_actions.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="color_convert.cpp" />
+    <ClCompile Include="file_reading_operators.cpp" />
     <ClCompile Include="line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="object_editor.cpp" />

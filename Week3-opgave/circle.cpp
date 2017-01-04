@@ -16,7 +16,7 @@ void circle::draw() const {
 	window.draw(round);
 }
 
-sf::Vector2f circle::move(sf::Vector2f delta) {
+void circle::move(sf::Vector2f delta) {
 
 	if (position.x < 0) {
 		position.x = 0;
@@ -34,7 +34,6 @@ sf::Vector2f circle::move(sf::Vector2f delta) {
 		position += delta;
 	}
 	round.setPosition(position);
-	return position;
 }
 
 sf::FloatRect circle::get_bounds() {
@@ -54,5 +53,15 @@ std::string circle::to_string() {
 		<< " " 
 		<< radius;
 	return s.str();
+}
+
+void circle::is_selected() {
+	selected = true;
+}
+bool circle::check_selected() {
+	return selected;
+}
+void circle::cancel_selected() {
+	selected = false;
 }
 

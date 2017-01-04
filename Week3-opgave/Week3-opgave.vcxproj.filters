@@ -45,6 +45,9 @@
     <ClCompile Include="color_convert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="file_reading_operators.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circle.hpp">

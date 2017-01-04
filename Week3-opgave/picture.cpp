@@ -1,8 +1,6 @@
 #include "picture.hpp"
 
 
-
-
 picture::picture(sf::RenderWindow & window, std::string picture_path, sf::Vector2f location) :
 	window(window),
 	picture_path(picture_path),
@@ -10,7 +8,7 @@ picture::picture(sf::RenderWindow & window, std::string picture_path, sf::Vector
 {
 	if (!texture.loadFromFile(
 			picture_path, 
-			sf::IntRect(location.x, location.y, texture.getSize().x, texture.getSize().y)
+			sf::IntRect(int(location.x), int(location.y), int(texture.getSize().x), int(texture.getSize().y))
 			)
 		){
 		std::cout << "Error while loding file.\n";
@@ -25,8 +23,10 @@ void picture::draw() const{
 }
 
 void picture::move(sf::Vector2f move_direction) {
-	location += move_direction;
-	sprite.setPosition(location);
+	if (selected) {
+		location += move_direction;
+		sprite.setPosition(location);
+	}
 }
 
 sf::FloatRect picture::get_bounds() {
@@ -44,6 +44,17 @@ std::string picture::to_string(){
 		<< ") "
 		<< picture_path;
 	return s.str();
+}
+
+
+void picture::is_selected() {
+	selected = true;
+}
+bool picture::check_selected() {
+	return selected;
+}
+void picture::cancel_selected() {
+	selected = false;
 }
 
 picture::~picture()

@@ -10,12 +10,10 @@ int main(void) {
 	object_editor edit(window, filename);
 
 	while (window.isOpen()) {
-
 		window.clear();
-		edit.update();
+		//edit.update();
 		window.display();
-
-		sf::sleep(sf::milliseconds(1));
+		
 
 		sf::Event event;
 		if (window.pollEvent(event)) {
@@ -25,7 +23,7 @@ int main(void) {
 		}
 
 
-		
+		sf::sleep(sf::milliseconds(10));
 
 	}
 

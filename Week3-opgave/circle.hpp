@@ -4,8 +4,9 @@
 #include <iostream>
 #include <sstream>
 #include "color_convert.hpp"
+#include "screen_objects.hpp"
 
-class circle : public screen_object{
+class circle : public screen_objects{
 
 
 private:
@@ -15,17 +16,17 @@ private:
 	sf::Color color;
 	float radius;
 	sf::CircleShape round;
-	
+	bool selected = false;
 
 public:
 
 	circle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color , float radius = 30.0);
-
-	void draw() const;
-
-	sf::Vector2f move(sf::Vector2f delta);
+	void draw() const override;
+	void move(sf::Vector2f delta);
 	sf::FloatRect get_bounds();
 	std::string to_string();
-	
+	void is_selected();
+	bool check_selected();
+	void cancel_selected();
 };
 

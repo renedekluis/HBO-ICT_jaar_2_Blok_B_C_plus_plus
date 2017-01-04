@@ -4,9 +4,10 @@
 #include <iostream>
 #include <sstream>
 #include "color_convert.hpp"
+#include "screen_objects.hpp"
 
 
-class rectangle{
+class rectangle: public screen_objects{
 private:
 	sf::RenderWindow & window;
 	sf::Vector2f windowSize = window.getView().getSize();
@@ -15,13 +16,17 @@ private:
 	sf::Vector2f size = position - end_position;
 	sf::RectangleShape square;
 	sf::Color color;
+	bool selected = false;
 
 
 public:
 	rectangle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, sf::Vector2f end_position);
-	void draw() const;
-	sf::Vector2f move(sf::Vector2f delta);
+	void draw() const override;
+	void move(sf::Vector2f delta);
 	sf::FloatRect get_bounds();
 	std::string to_string();
+	void is_selected();
+	bool check_selected();
+	void cancel_selected();
 };
 

@@ -1,80 +1,11 @@
 ﻿  screen_objects.cpp
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): error C2653: 'sf': is not a class or namespace name
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): error C3646: 'bounds': unknown override specifier
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): error C2059: syntax error: ')'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): error C2238: unexpected token(s) preceding ';'
   rectangle.cpp
+  picture.cpp
   object_editor.cpp
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(108): error C2653: 'colorFunctions': is not a class or namespace name
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(108): error C3861: 'stringToColor': identifier not found
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(130): error C2039: 'to_string': is not a member of 'screen_objects'
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(3): note: see declaration of 'screen_objects'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(142): error C2061: syntax error: identifier 'circle'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(148): error C2061: syntax error: identifier 'rectangle'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(154): error C2061: syntax error: identifier 'picture'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(161): error C2061: syntax error: identifier 'line'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2065: 'screen_object': undeclared identifier
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2059: syntax error: '>'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2976: 'std::list': too few template arguments
-  d:\program files\microsoft visual studio 14.0\vc\include\list(863): note: see declaration of 'std::list'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2663: 'std::list<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2663: 'std::list<_Ty,_Alloc>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C3536: '<begin>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C3536: '<end>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(172): error C2227: left of '->draw' must point to class/struct/union/generic type
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(172): note: type is 'int'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2065: 'screen_object': undeclared identifier
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2059: syntax error: '>'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2976: 'std::list': too few template arguments
-  d:\program files\microsoft visual studio 14.0\vc\include\list(863): note: see declaration of 'std::list'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2663: 'std::list<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2663: 'std::list<_Ty,_Alloc>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C3536: '<begin>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C3536: '<end>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(180): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(180): error C2088: '<<': illegal for class
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): error C2259: 'screen_objects': cannot instantiate abstract class
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): note: due to following members:
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): note: 'sf::FloatRect screen_objects::bounds(void)': is abstract
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): note: see declaration of 'screen_objects::bounds'
-  movement.cpp
   main.cpp
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(108): error C2653: 'colorFunctions': is not a class or namespace name
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(108): error C3861: 'stringToColor': identifier not found
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(130): error C2039: 'to_string': is not a member of 'screen_objects'
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(3): note: see declaration of 'screen_objects'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(142): error C2061: syntax error: identifier 'circle'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(148): error C2061: syntax error: identifier 'rectangle'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(154): error C2061: syntax error: identifier 'picture'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(161): error C2061: syntax error: identifier 'line'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2065: 'screen_object': undeclared identifier
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2059: syntax error: '>'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(169): error C2976: 'std::list': too few template arguments
-  d:\program files\microsoft visual studio 14.0\vc\include\list(863): note: see declaration of 'std::list'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2663: 'std::list<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2663: 'std::list<_Ty,_Alloc>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C3536: '<begin>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C3536: '<end>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(171): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(172): error C2227: left of '->draw' must point to class/struct/union/generic type
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(172): note: type is 'int'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2065: 'screen_object': undeclared identifier
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2059: syntax error: '>'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(177): error C2976: 'std::list': too few template arguments
-  d:\program files\microsoft visual studio 14.0\vc\include\list(863): note: see declaration of 'std::list'
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2663: 'std::list<_Ty,_Alloc>::begin': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2663: 'std::list<_Ty,_Alloc>::end': 2 overloads have no legal conversion for 'this' pointer
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C3536: '<begin>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C3536: '<end>$L0': cannot be used before it is initialized
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(179): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(180): error C2100: illegal indirection
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(180): error C2088: '<<': illegal for class
-d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): error C2259: 'screen_objects': cannot instantiate abstract class
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): note: due to following members:
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\object_editor.hpp(198): note: 'sf::FloatRect screen_objects::bounds(void)': is abstract
-  d:\documents-(d)\hbo-ict\jaar2\blok b\git\hbo-ict_jaar_2_blok_b_c_plus_plus\week3-opgave\screen_objects.hpp(6): note: see declaration of 'screen_objects::bounds'
   line.cpp
+  color_convert.cpp
   circle.cpp
+  button_actions.cpp
   Generating Code...
+x64\Debug\button_actions.obj : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'X86'
