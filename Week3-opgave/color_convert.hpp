@@ -1,29 +1,23 @@
-#pragma once
+#ifndef _COLOR_CONVERT_HPP
+#define _COLOR_CONVERT_HPP
 
 #include <SFML/Graphics.hpp>
 #include "exception_list.hpp"
+#include <vector>
 
-
-
-const struct {
-	std::string name; sf::Color color;
-}colors[]{
-	{ "red", sf::Color::Red },
-	{ "yellow", sf::Color::Yellow },
-	{ "green", sf::Color::Green },
-	{ "blue", sf::Color::Blue },
-	{ "black", sf::Color::Black },
-	{ "white", sf::Color::White },
-	{ "magenta", sf::Color::Magenta },
-	{ "cyan", sf::Color::Cyan },
-	{ "transparent", sf::Color::Transparent }
-};
+typedef struct {
+	std::string name; 
+	sf::Color color_value;
+}string_and_colors;
 
 class color_convert{
+private:
+	static string_and_colors colors[];
 public:
 	static sf::Color string_to_color(std::string color);
 	static std::string color_to_string(sf::Color color);
 };
+#endif //COLOR_CONVERT_HPP
 
 
 

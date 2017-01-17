@@ -11,6 +11,8 @@
 #include "circle.hpp"
 #include "picture.hpp"
 #include "button_actions.hpp"
+#include "color_convert.hpp"
+#include "line.hpp"
 
 
 class object_editor{
@@ -26,7 +28,7 @@ public:
 	object_editor(sf::RenderWindow & window, std::string filename_object_data);
 	void update();
 	screen_objects * screen_object_read(std::ifstream & input);
-	void save(std::vector<screen_objects*> screen_objects);
+	void save();
 	sf::Vector2f object_editor::Vector2f_from_Vector2i(sf::Vector2i vector);
 	
 	~object_editor();

@@ -4,14 +4,17 @@
 std::ifstream & operator >> (std::ifstream & input, sf::Vector2f & rhs) {
 	char c;
 	if (!(input >> c)) { throw end_of_file(); }
-
+	
+	while (c == '\n' || c == ' ') {
+		c = input.get();
+		if (c == EOF) { throw end_of_file(); }
+	}
+	
 	if (c != '(') { throw invalid_position(c); }
 
 	if (!(input >> rhs.x)) { throw invalid_position(c); }
 
 	if (!(input >> c)) { throw invalid_position(c); }
-
-	if (c != ',') { throw invalid_position(c); }
 
 	if (!(input >> rhs.y)) { throw invalid_position(c); }
 
@@ -27,21 +30,6 @@ std::ifstream & operator >> (std::ifstream & input, char & rhs) {
 	return input;
 }
 
-std::ifstream & operator >> (std::ifstream & input, float & rhs) {
-	char c;
-	rhs = 0.0;
-	for (;;) {
-		c = input.peek();
-		if (c >= '0' && c <= '9') {
-			rhs *= 10 + (c - '0');
-		}
-		else if (rhs != 0.0) {
-			break;
-		}
-		input.get();
-	}
-	return input;
-}
 
 std::ifstream & operator >> (std::ifstream & input, sf::Color & rhs) {
 	std::string s;
@@ -53,9 +41,10 @@ std::ifstream & operator >> (std::ifstream & input, sf::Color & rhs) {
 std::ifstream & operator >> (std::ifstream & input, std::string & rhs) {
 	char c;
 	rhs = "";
+
 	for (;;) {
 		c = input.get();
-		if (c == '\0' || c == '\n' || c == ' ') {
+		if (c == '\0' || c == '\n' || c == ' ' || c == EOF) {
 			if (rhs != "") {
 				break;
 			}
@@ -65,8 +54,4 @@ std::ifstream & operator >> (std::ifstream & input, std::string & rhs) {
 		}
 	}
 	return input;
-}
-
-std::ostream& operator<<(std::ostream &strm, const screen_objects &screen_obj) {
-	return strm << const_cast<screen_objects&>(screen_obj).to_string();
 }

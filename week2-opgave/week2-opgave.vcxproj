@@ -176,12 +176,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Week5-opgave\button_actions.cpp" />
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="windowHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Week5-opgave\button_actions.hpp" />
     <ClInclude Include="ball.hpp" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="windowHandler.hpp" />

@@ -10,8 +10,6 @@ class circle : public screen_objects{
 
 
 private:
-	sf::RenderWindow & window;
-	sf::Vector2f windowSize = window.getView().getSize();
 	sf::Vector2f position;
 	sf::Color color;
 	float radius;
@@ -19,9 +17,8 @@ private:
 	bool selected = false;
 
 public:
-
-	circle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color , float radius = 30.0);
-	void draw() const override;
+	circle(sf::Vector2f position, sf::Color color = sf::Color::White, int radius = 70);
+	void draw(sf::RenderWindow & window) const override;
 	void move(sf::Vector2f delta);
 	sf::FloatRect get_bounds();
 	std::string to_string();

@@ -1,24 +1,20 @@
 #include "picture.hpp"
 
 
-picture::picture(sf::RenderWindow & window, std::string picture_path, sf::Vector2f location) :
-	window(window),
+picture::picture(std::string picture_path, sf::Vector2f location) :
 	picture_path(picture_path),
 	location(location)
 {
-	if (!texture.loadFromFile(
-			picture_path, 
-			sf::IntRect(int(location.x), int(location.y), int(texture.getSize().x), int(texture.getSize().y))
-			)
-		){
+	if (!texture.loadFromFile(picture_path)){
 		std::cout << "Error while loding file.\n";
 	}
+	sprite.setPosition(location);
 	texture.setSmooth(true);
 	sprite.setTexture(texture);
 }
 
 
-void picture::draw() const{
+void picture::draw(sf::RenderWindow & window) const{
 	window.draw(sprite);
 }
 
@@ -37,11 +33,11 @@ std::string picture::to_string(){
 	std::ostringstream s;
 	sf::FloatRect position = get_bounds();
 	s << 
-		"PICTURE (" 
+		"(" 
 		<< position.left 
 		<< "," 
 		<< position.top 
-		<< ") "
+		<< ") PICTURE "
 		<< picture_path;
 	return s.str();
 }

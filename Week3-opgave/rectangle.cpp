@@ -1,19 +1,17 @@
 #include "rectangle.hpp"
 
 
-rectangle::rectangle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, sf::Vector2f end_position) :
-	window(window),
+rectangle::rectangle(sf::Vector2f position, sf::Color color, sf::Vector2f end_position) :
 	position(position),
-	size(position-end_position),
+	size(end_position - position),
 	color(color)
 {
 	square.setSize(size);
 	square.setFillColor(color);
-	square.setPosition(windowSize.x / 2 - size.x / 2, windowSize.y - size.y);
-
+	square.setPosition(position);
 }
 
-void rectangle::draw() const {
+void rectangle::draw(sf::RenderWindow & window) const {
 	window.draw(square);
 }
 
@@ -22,7 +20,6 @@ void rectangle::move(sf::Vector2f delta) {
 		position += delta;
 		square.setPosition(position);
 	}
-
 }
 
 sf::FloatRect rectangle::get_bounds() {
@@ -32,18 +29,16 @@ sf::FloatRect rectangle::get_bounds() {
 
 std::string rectangle::to_string() {
 	std::ostringstream s;
-	sf::FloatRect position = get_bounds();
-	s << 
-		"RECTANGLE (" 
-		<< position.left 
+	s << "(" 
+		<< position.x
 		<< "," 
-		<< position.top 
-		<< ") "
+		<< position.y
+		<< ") RECTANGLE "
 		<< color_convert::color_to_string(color)
 		<< " ("
-		<< end_position.x
+		<< position.x + size.x
 		<< "," 
-		<< end_position.y 
+		<< position.y + size.y
 		<< ")";
 	return s.str();
 }

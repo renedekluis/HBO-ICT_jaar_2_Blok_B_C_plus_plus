@@ -1,39 +1,25 @@
 #include "circle.hpp"
 
 
-circle::circle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, float radius) :
-	window(window),
-	radius(radius),
-	position(position)
+circle::circle(sf::Vector2f position, sf::Color color, int radius) :
+	color(color),
+	position(position),
+	radius(float(radius))
 {
-	position = window.getView().getSize();
-	position.x /= 2;
-	position.y /= 2;
-	round.setRadius(radius);
+	round.setRadius(float(radius));
+	round.setPosition(position);
+	round.setFillColor(color);
 }
 
-void circle::draw() const {
+void circle::draw(sf::RenderWindow & window) const {
 	window.draw(round);
 }
 
 void circle::move(sf::Vector2f delta) {
-
-	if (position.x < 0) {
-		position.x = 0;
-	}
-	else if (position.x >(windowSize.x - radius)) {
-		position.x = float(windowSize.x - radius);
-	}
-	else if (position.y < 0) {
-		position.y = 0;
-	}
-	else if (position.y >(windowSize.y - radius)) {
-		position.y = float(windowSize.y - radius);
-	}
-	else {
+	if (selected) {
 		position += delta;
+		round.setPosition(position);
 	}
-	round.setPosition(position);
 }
 
 sf::FloatRect circle::get_bounds() {
@@ -43,12 +29,11 @@ sf::FloatRect circle::get_bounds() {
 
 std::string circle::to_string() {
 	std::ostringstream s;
-	sf::FloatRect position = get_bounds();
-	s << "CIRCLE (" 
-		<< position.left 
+	s << "(" 
+		<< position.x 
 		<< "," 
-		<< position.top 
-		<< ") "
+		<< position.y 
+		<< ") CIRCLE "
 		<< color_convert::color_to_string(color)
 		<< " " 
 		<< radius;

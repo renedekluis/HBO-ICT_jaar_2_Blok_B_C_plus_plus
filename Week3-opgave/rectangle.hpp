@@ -7,10 +7,8 @@
 #include "screen_objects.hpp"
 
 
-class rectangle: public screen_objects{
+class rectangle : public screen_objects {
 private:
-	sf::RenderWindow & window;
-	sf::Vector2f windowSize = window.getView().getSize();
 	sf::Vector2f position;
 	sf::Vector2f end_position;
 	sf::Vector2f size = position - end_position;
@@ -20,8 +18,8 @@ private:
 
 
 public:
-	rectangle(sf::RenderWindow & window, sf::Vector2f position, sf::Color color, sf::Vector2f end_position);
-	void draw() const override;
+	rectangle(sf::Vector2f position = {10, 10}, sf::Color color = sf::Color::White, sf::Vector2f end_position = { 20,20 });
+	void draw(sf::RenderWindow & window) const override;
 	void move(sf::Vector2f delta);
 	sf::FloatRect get_bounds();
 	std::string to_string();
